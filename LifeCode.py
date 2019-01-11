@@ -109,7 +109,6 @@ class LifeCode():
             print('请输入合法的中文名！\n')
             self.insertBirthday()
 
-
     def countStrokes(self,chinese):
         '''利用爬虫得到输入汉字的笔画数'''
         url='https://bihua.911cha.com/'
@@ -160,11 +159,12 @@ class LifeCode():
     def outTrendType(self,outTrend):
         '''计算外在动向属性'''
         if int(outTrend)>3:
-            return '理想主义者'
-        elif int(outTrend)>3:
-            return '现实主义者'
-        elif int(outTrend)>3:
-            return '远见主义者'
+            type ='理想主义者'
+        if int(outTrend)>6:
+            type = '现实主义者'
+        if int(outTrend)>9:
+            type = '远见主义者'
+        return type
 
     #执行函数
     def run(self):
@@ -172,7 +172,6 @@ class LifeCode():
             print('\n欢迎使用生命密码计算程序！\n')
             self.insertBirthday()
             print()
-
 
 if __name__ == '__main__':
     lfcode=LifeCode()
